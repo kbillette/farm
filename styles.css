@@ -58,18 +58,47 @@ table {
     --white: #ffffff;
 
 }
+
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+/* * {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+  } */
+
 body{
+    min-width: 320px;
     font-family: habibi;
 }
 
-header{
+header, footer {
     background-color: var(--green);
     color: var(--white);
+    text-align: center;
 }
 
 nav{
+    background-color: var(--white);
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    text-align: center;
     background-color: var(--orange);
     color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+}
+
+img {
+    display: flex;
+    align-items: center;
 }
 
 h1 > p {
@@ -88,14 +117,48 @@ h2{
     font-size: 1.75em;
 }
 
+h2, h3 {
+    font-weight: bold;
+}
+
+h3 {
+    text-align: center;
+    margin: 20px;
+}
+
 h3, p {
     font-size: 1.25em;
 }
 
+img {
+    display: block;
+    align-items: center;
+} 
 
-/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+#contact {
+    margin: 10px;
+    padding: 20px;
+}
 
+footer > nav {
+    display: block;
+    float:right;
+}
 
+footer > p {
+    background-color: var(--white);
+    color: var(--green);
+}
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media screen and (min-width: 550px) {
+    
+    nav > ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width: 850px) {}
+
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media screen and (min-width: 1100px) {}
