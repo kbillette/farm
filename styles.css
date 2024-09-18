@@ -62,62 +62,84 @@ table {
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
 
 body{
-    min-width: 320px;
+    min-width: 428px;
     font-family: habibi;
 }
 
 header, footer {
     background-color: var(--green);
     color: var(--white);
+}
+
+hgroup {
+    margin: 25px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+hgroup h1 {
+    text-shadow: 2px 2px #000000;
+    margin: 0px 0px 10px;
+}
+
+hgroup p {
+    font-style: italic;
 }
 
 #top {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
 }
 
-nav {
+#top nav {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--white);
-    
 }
 
 nav li {
     list-style: none;
 }
 
-nav a {
-    display: block;
-    text-align: center;
+a {
     background-color: var(--orange);
     color: var(--white);
     text-decoration: none;
+}
+
+#top nav a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     border-radius: 5px;
     margin: 20px 50px;
     padding: 10px 90px;
 }
 
 #fruits p, #vegetables p {
-    margin: 20px 10px;
-}
-
-#fruits figure, #vegetables figure {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    margin: 20px 10px;
+}
+
+figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 img {
-    margin: 20px;
     position: relative;
+    margin: 20px;
     z-index: 1;
 }
-
 figcaption {
+    align-items: center;
+    justify-content: center;
     color: var(--white);
     background: rgba(0, 0, 0, 0.7);
     font-size: 1.25em;
@@ -140,6 +162,7 @@ h2{
 
 
 h2, h3 {
+    margin: 10px;
     font-weight: bold;
 }
 
@@ -152,25 +175,47 @@ h3 {
     font-size: 1.25em;
 }
 
-#contact {
-    margin: 10px;
-    padding: 20px;
-}
-
 footer {
     display: flex;
     flex-direction: column;
 }
 
+footer h2, footer address, #hours {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
 
-footer > p {
+footer address {
+    margin: 10px 0 20px;
+}
+
+#hours {
+    text-align: center;
+}
+
+footer nav a {
+    float: right;
+    padding: 10px;
+    border-width: 2px;
+    border-color: var(--white);
+    border-style: solid; 
+    border-radius: 5px;
+}
+footer p {
     background-color: var(--white);
     color: var(--green);
-    align-items: center;
+    text-align: center;
 }
 
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 834px) {
+
+    hgroup {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 
 
     h1, h1 p {
@@ -182,50 +227,30 @@ footer > p {
         grid-template-columns: 1fr 1fr;
     }
     
-    #fruits figure , #vegetables figure {
+    #fruits figure {
         display: inline-flex;
-        flex-wrap: wrap;
-        
+        place-items: center;
     }
 
-    footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    #vegetables figure {
+        display: inline-flex;
+        place-items: center;
     }
-
-    footer > p {
-        grid-column: 1/3;
-    }
-
-    footer nav ul {
-        position: absolute;
-        align-items: right;
-    }
-
-    #contact, #hours {
-        display: flex;
-    }
-
-    #contact {
-        display: flex;
-        flex-flow: column wrap;
-    }
-
-    #hours {
-        display: flex;
-        flex-flow: column wrap;
-    }
+    
 }
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1280px) {
+
+    hgroup {
+        display: flex;
+        flex-direction: column;
+    }
     header {
         display: flex;
         background-color: var(--green);
     }
 
-    header nav {
-        display: flex;
-        flex-direction: column;
+    #top nav {
         background-color: var(--green);
     }
 
@@ -237,4 +262,4 @@ footer > p {
 }
 
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
-@media screen and (min-width: 1400px) {}
+@media screen and (min-width: 1440px) {}
