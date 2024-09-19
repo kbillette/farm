@@ -61,7 +61,7 @@ table {
 
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
 
-body{
+body {
     min-width: 428px;
     font-family: habibi;
 }
@@ -71,62 +71,50 @@ header, footer {
     color: var(--white);
 }
 
-hgroup {
-    margin: 25px;
+header {
+    padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-hgroup h1 {
+h1 {
     text-shadow: 2px 2px #000000;
     margin: 0px 0px 10px;
 }
 
-hgroup p {
+header p {
     font-style: italic;
 }
 
-#farm {
-    display: flex;
-    flex-direction: column;
-    /*align-items: center;*/
+#top {
+    align-items: center;
 }
 
-#farm nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--white);
-}
 
 nav li {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 90px;
 }
 
 a {
     background-color: var(--orange);
     color: var(--white);
     text-decoration: none;
-}
-
-#farm nav a {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     border-radius: 5px;
-    margin: 20px 50px;
-    padding: 10px 90px;
+    padding: 10px 70px;
 }
 
-#top {
+nav ul li:last-of-type {
+    width: 60px;
+    height: 60px;
     position: fixed;
-    float: right;
-    padding: 10px;
-    border-width: 2px;
-    border-color: var(--white);
-    border-style: solid; 
-    border-radius: 5px;
+    z-index: 3;
+    right: 0px;
+    bottom: 0px;
 }
 
 #fruits p, #vegetables p {
@@ -204,15 +192,6 @@ footer address {
     text-align: center;
 }
 
-/*footer nav a {
-    position: fixed;
-    float: right;
-    padding: 10px;
-    border-width: 2px;
-    border-color: var(--white);
-    border-style: solid; 
-    border-radius: 5px;
-}*/
 footer p {
     background-color: var(--white);
     color: var(--green);
@@ -303,21 +282,19 @@ footer p {
         min-width: 1280px;
     }
 
-    header {
+    header, nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
         background-color: var(--green);
     }
 
-    hgroup {
+    header h1, header p {
         display: grid;
         grid-column: 1/2;
     }
     
-    #farm nav {
-        background-color: var(--green);
-        grid-column: 2/3;
-        
+    nav {
+        grid-row: 2/3;
     }
 
     nav a {
@@ -368,6 +345,7 @@ footer p {
     footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
     }
 
     footer h2 {
@@ -382,7 +360,7 @@ footer p {
         grid-column: 3/4;
     }
 
-    #hours > dl {
+    dl {
         grid-column: 4/5;
     }
 
